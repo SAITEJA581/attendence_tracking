@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.admin {
+    margin-top: -450px;
+    margin-right:-340px;
+    position: relative;
+}
+
+.login-container, .admin-login-container {
+    position: relative;
+    background-color: #fff;
+    padding: 0 0 14px 0;
+    border-radius: 5px;
+    width: 350px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 16px 8px rgba(0,0,0,0.1),0 16px 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.data-student {
+    float: right;
+    margin-right: 100px;
+}
+
+.data-student button {
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#monthSelect, #yearSelect {
+    float: left;
+    margin-right: 20px;
+}
+
+.month-year-select {
+    display: flex;
+    align-items: center;
+}
+
+.month-year-select label {
+    margin-right: 10px;
+}
+
+.month-year-select select, .month-year-select input[type="number"] {
+    margin-right: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 18px;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="name"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    margin-left: 36px;
+}
+
+input[type="submit"] {
+    width: 30%;
+    padding: 10px;
+    background-color: #1877f2;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 122px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+.toggle-login {
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #1877f2;
+    text-decoration: underline;
+}
+
+.toggle-login:hover {
+    color: #4cae4c;
+}
+
+.head-subject {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#admissionNoDisplay, #semesterDisplay {
+    width: 10%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+    margin-left: 36px;
+}
+
+#saveAttendance {
+    width: 10%;
+    padding: 10px;
+    background-color: #1877f2;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 222px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+#goBack {
+    width: 6%;
+    padding: 10px;
+    background-color: #1877f2;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 502px;
+    position: absolute;
+    margin-top: 20px;
+}
+
+#studentDetails {
+    margin: 20px auto;
+    padding: 20px;
+    height: 100vh;
+}
+
+.navBack {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+#studentDetails h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#studentTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+#studentTable thead tr {
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+}
+
+#studentTable th, #studentTable td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#studentTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#studentTable tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#studentTable th {
+    background-color: #007BFF;
+    color: white;
+}
+
+#studentTable td {
+    color: #333;
+}
+
+#studentTable th, #studentTable td {
+    padding: 10px;
+    text-align: center;
+}
+
+.no-class {
+    background-color: red;
+}
+
+.studentDetails {
+    text-align: center;
+}
