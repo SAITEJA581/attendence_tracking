@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracking System</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="admin-login-container" id="adminLoginForm">
+        <h2>Admin Login</h2>
+        <form id="adminLogin">
+            <div class="form-group">
+                <label for="admin-username">Username</label>
+                <input type="text" id="admin-username" name="admin-username" required>
+            </div>
+            <div class="form-group">
+                <label for="admin-password">Password</label>
+                <input type="password" id="admin-password" name="admin-password" required>
+            </div>
+            <input type="submit" value="Sign In">
+            <p class="toggle-login" id="attendanceLoginLink">Go to Attendance Login</p>
+        </form>
+    </div>
+
+    <div class="login-container" id="attendanceLoginForm" style="display: none;">
+        <h2>Attendance Login</h2>
+        <form id="loginform">
+            <div class="form-group">
+                <label for="admin-number">Admission No</label>
+                <input type="text" id="admin-number" name="admin-number" pattern="[A-Za-z0-9]+" minlength="3" maxlength="12" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <input type="submit" value="Login">
+            <p class="toggle-login" id="adminLoginLink">Go to Admin Login</p>
+        </form>
+    </div>
+
+    <div id="adminDashboard" style="display: none;">
+        <h2>Admin Dashboard</h2>
+        <div class="data-student">
+            <!-- <button id="showAttendanceBtn">Show Attendance Details</button> -->
+            <button id="showStudentDetailsBtn">Show Student Details</button>    
+        </div>
+        
+    
+        <div id="adminDetails">
+            <p><strong>Admission No:</strong> <input type="text" id="admissionNoDisplay"></p>
+            <p><strong>Semester:</strong> <input type="text" id="semesterDisplay"></p> 
+            <p><strong>Select Course:</strong> <input type="text" id="courseSelect" style="width: 10%;" readonly></p>
+            <p id="errorMessage" style="color: red; display: none;">Admission number not found</p>
+        </div>
+    
+        <form id="attendanceForm">
+
+            <div class="month-year-select">
+                <label for="monthSelect">Select Month:</label>
+                <select id="monthSelect">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                
+                <label for="yearSelect">Select Year:</label>
+                <input type="number" id="yearSelect" value="2024" min="1900">
+            </div>
+
+            <h3 class="head-subject">Subjects and Attendance</h3>
+            <table border="1" id="attendanceTable">
+                <thead>
+                    <tr>
+                        <th>Subject Id</th>
+                        <th>Subject</th>
+                        <th colspan="31">Attendance(Enter p/a/n)</th>
+                        <th>Total Present</th>
+                        <th>Total Absent</th>
+                        <th>Total Classes</th>
+                    </tr>
+                </thead>
+                <tbody id="subjectsTableBody">
+                    <tr>
+                        <td id="subject1Id">1</td>
+                        <td id="subject1">Subject 1</td>
+                        <td colspan="31" id="subject1Classes"></td>
+                        <td id="subject1TotalClasses">0</td> 
+                        <td id="subject1TotalPresent">0</td>
+                        <td id="subject1TotalAbsent">0</td>
+                    </tr>
+                    <tr>
+                        <td id="subject2Id">1</td>
+                        <td id="subject2">Subject 2</td>
+                        <td colspan="31" id="subject2Classes"></td>
+                        <td id="subject2TotalClasses">0</td>
+                        <td id="subject2TotalPresent">0</td>
+                        <td id="subject2TotalAbsent">0</td>
+                    </tr>
+                    <tr>
+                        <td id="subject3Id">1</td>
+                        <td id="subject3">Subject 3</td>
+                        <td colspan="31" id="subject3Classes"></td>
+                        <td id="subject3TotalClasses">0</td>
+                        <td id="subject3TotalPresent">0</td>
+                        <td id="subject3TotalAbsent">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <input type="submit" value="Save Attendance" id="saveAttendance">
+        </form>
+        <button id="goBack">Go Back</button>
+    </div> 
+    
+    <div id="studentDetails" style="display: none;">
+        <h3>Student Details</h3>
+        <a class="navBack" href="login.html">Back to admin page</a>
+        <table id="studentTable" border="1">
+            <thead>
+                <tr>
+                    <th>Admission No</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Email</th>
+                    <th>Phone No</th>
+                    <th>Date of Birth</th>
+                    <th>Semester</th>
+                    <th>Year</th>
+                    <th>Father's Name</th>
+                    <th>Father's Number</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- <div id="attendanceDetails" style="display: none; height: 100vh;">
+        <table id="getAttendance" border="1">
+            <h3 class="studentDetails">Students Attendance Details</h3>
+            <a class="navBack" href="login.html">Back to Admin Page</a>
+            <thead>
+                <tr>
+                    <th>Admission No</th>
+                    <th>Semester</th>
+                    <th>Course</th>
+                    <th>Student Name</th>
+                    <th>Mobile No</th>
+                    <th>Total Classes</th>
+                    <th>Present</th>
+                    <th>Absent</th>
+                    <th>Overall Percentage</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+                
+            </tbody>
+        </table>    
+    </div> -->
+     <script src="./login1.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link rel="stylesheet" href="./nav.css">
+</head>
+<body>
+    <div class="nav-container">
+        <div class="navbar">
+            <a href="#" id="homeLink">Home</a>
+            <a href="#" id="profileLink">Profile</a>
+            <a href="#" id="attendanceLink">Attendance</a>
+            <a href="#" id="dispatchLink">Fine</a>
+            <a href="login.html">Logout</a>
+        </div>
+        <div class="details">
+            <div class="form">
+                <label for="admin-number">Admn No:</label>
+                <span id="adminNoDisplay"></span>
+            </div>
+            <div class="form">
+                <label for="name">Name:</label>
+                <span id="nameDisplay"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container" id="homeContent">
+        <div id="dateTimeDisplay"></div>
+        <div class="photo">
+            <img src="your-photo.jpg" alt="Student Photo" id="studentPhoto">
+        </div>
+    </div>
+
+    <div class="content-container" id="profileContent">
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="profileName">Name:</label>
+                <input type="text" id="profileName" name="profileName" readonly>
+            </div>
+            <div class="form-group">
+                <label for="profileDob">Date of Birth:</label>
+                <input type="date" id="profileDob" name="profileDob" readonly>
+            </div>
+            <div class="form-group">
+                <label for="profileYear">Year:</label>
+                <input type="text" id="profileYear" name="profileYear" minlength="2" readonly>
+            </div>
+            <div class="form-group">
+                <label for="profileSem">Semester:</label>
+                <input type="text" id="profileSem" name="profileSem" readonly>
+            </div>
+            <div class="form-group">
+                <label for="profileCourse">Course:</label>
+                <input type="text" id="profileCourse" name="profileCourse" readonly>
+            </div>
+            <div class="form-group">
+                <label for="profileFatherName">Father's Name:</label>
+                <input type="text" id="profileFatherName" name="profileFatherName" readonly>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="content-container" id="attendanceContent" style="display: none;">
+        <h3>Attendance Details</h3>
+        <h4 id="attendanceMonthYear"></h4>
+        <div id="attendanceSummary"> 
+            <div class="attendance-grid">
+            </div> 
+            <div class="right-column">
+                <p id="leftAttendanceData"></p> 
+                <p id="rightAttendanceData"></p> 
+            </div>
+        </div>
+        <a href="#" id="attendenceTracking">Attendence Tracking</a>    
+    
+    </div>
+    <div class="attendance-container" id="attendanceContainer" style="display: none;">
+        <h4 id="semesterMonth"></h4>
+        <table>
+            <tr>
+                <th>Total Classes</th>
+                <th>Total Present</th>
+                <th>Total Absent</th>
+                <th>Total percentage</th>    
+            </tr>
+        </table>
+    </div>
+
+    <div id="dispatchFineContent">
+        <h2>Fine</h2>
+        <form id="dispatchForm">
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" placeholder="Enter email ID" required><br><br>
+    
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Enter Fathers phone number" required><br><br>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Enter your message" required></textarea><br><br>
+    
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script src="./nav1.js"></script>
+</body>
+</html>
